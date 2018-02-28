@@ -17,37 +17,19 @@ import java.util.Map;
 /**
  * InputPart
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-28T21:48:42.893Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-28T23:15:11.911Z")
 public class InputPart {
-  @SerializedName("contentTypeFromMessage")
-  private Boolean contentTypeFromMessage = null;
-
   @SerializedName("bodyAsString")
   private String bodyAsString = null;
+
+  @SerializedName("contentTypeFromMessage")
+  private Boolean contentTypeFromMessage = null;
 
   @SerializedName("headers")
   private Map<String, List<String>> headers = null;
 
   @SerializedName("mediaType")
   private MediaType mediaType = null;
-
-  public InputPart contentTypeFromMessage(Boolean contentTypeFromMessage) {
-    this.contentTypeFromMessage = contentTypeFromMessage;
-    return this;
-  }
-
-   /**
-   * Get contentTypeFromMessage
-   * @return contentTypeFromMessage
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isContentTypeFromMessage() {
-    return contentTypeFromMessage;
-  }
-
-  public void setContentTypeFromMessage(Boolean contentTypeFromMessage) {
-    this.contentTypeFromMessage = contentTypeFromMessage;
-  }
 
   public InputPart bodyAsString(String bodyAsString) {
     this.bodyAsString = bodyAsString;
@@ -65,6 +47,24 @@ public class InputPart {
 
   public void setBodyAsString(String bodyAsString) {
     this.bodyAsString = bodyAsString;
+  }
+
+  public InputPart contentTypeFromMessage(Boolean contentTypeFromMessage) {
+    this.contentTypeFromMessage = contentTypeFromMessage;
+    return this;
+  }
+
+   /**
+   * Get contentTypeFromMessage
+   * @return contentTypeFromMessage
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isContentTypeFromMessage() {
+    return contentTypeFromMessage;
+  }
+
+  public void setContentTypeFromMessage(Boolean contentTypeFromMessage) {
+    this.contentTypeFromMessage = contentTypeFromMessage;
   }
 
   public InputPart headers(Map<String, List<String>> headers) {
@@ -121,15 +121,15 @@ public class InputPart {
       return false;
     }
     InputPart inputPart = (InputPart) o;
-    return Objects.equals(this.contentTypeFromMessage, inputPart.contentTypeFromMessage) &&
-        Objects.equals(this.bodyAsString, inputPart.bodyAsString) &&
+    return Objects.equals(this.bodyAsString, inputPart.bodyAsString) &&
+        Objects.equals(this.contentTypeFromMessage, inputPart.contentTypeFromMessage) &&
         Objects.equals(this.headers, inputPart.headers) &&
         Objects.equals(this.mediaType, inputPart.mediaType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contentTypeFromMessage, bodyAsString, headers, mediaType);
+    return Objects.hash(bodyAsString, contentTypeFromMessage, headers, mediaType);
   }
 
 
@@ -138,8 +138,8 @@ public class InputPart {
     StringBuilder sb = new StringBuilder();
     sb.append("class InputPart {\n");
     
-    sb.append("    contentTypeFromMessage: ").append(toIndentedString(contentTypeFromMessage)).append("\n");
     sb.append("    bodyAsString: ").append(toIndentedString(bodyAsString)).append("\n");
+    sb.append("    contentTypeFromMessage: ").append(toIndentedString(contentTypeFromMessage)).append("\n");
     sb.append("    headers: ").append(toIndentedString(headers)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("}");

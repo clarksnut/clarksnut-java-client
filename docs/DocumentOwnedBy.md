@@ -1,10 +1,10 @@
 
-# DocumentRelationships
+# DocumentOwnedBy
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ownedBy** | [**DocumentOwnedBy**](DocumentOwnedBy.md) |  |  [optional]
+**data** | [**List&lt;SpaceData&gt;**](SpaceData.md) |  |  [optional]
 
 
 

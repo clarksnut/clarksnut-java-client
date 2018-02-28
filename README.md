@@ -97,19 +97,19 @@ Class | Method | HTTP request | Description
 *DocumentsApi* | [**printDocument**](docs/DocumentsApi.md#printDocument) | **GET** /api/documents/{documentId}/print | Print Document
 *DocumentsApi* | [**searchDocuments**](docs/DocumentsApi.md#searchDocuments) | **POST** /api/documents/search | Search Document
 *DocumentsApi* | [**updateDocument**](docs/DocumentsApi.md#updateDocument) | **PUT** /api/documents/{documentId} | Update Document
+*NamespacesApi* | [**addSpaceCollaborators**](docs/NamespacesApi.md#addSpaceCollaborators) | **POST** /api/namespaces/{spaceId}/collaborators | Add Space SpaceCollaborators
+*NamespacesApi* | [**deleteUserSpace**](docs/NamespacesApi.md#deleteUserSpace) | **DELETE** /api/namespaces/{spaceId} | Delete space
+*NamespacesApi* | [**getSpaceCollaborators**](docs/NamespacesApi.md#getSpaceCollaborators) | **GET** /api/namespaces/{spaceId}/collaborators | Get Space SpaceCollaborators
+*NamespacesApi* | [**getUserSpace**](docs/NamespacesApi.md#getUserSpace) | **GET** /api/namespaces/{spaceId} | Get Space
+*NamespacesApi* | [**getUserSpaces**](docs/NamespacesApi.md#getUserSpaces) | **GET** /api/namespaces | Get Spaces of user
+*NamespacesApi* | [**removeSpaceCollaborators**](docs/NamespacesApi.md#removeSpaceCollaborators) | **DELETE** /api/namespaces/{spaceId}/collaborators/{userId} | Remove Space SpaceCollaborators
+*NamespacesApi* | [**updateUserSpace**](docs/NamespacesApi.md#updateUserSpace) | **PUT** /api/namespaces/{spaceId} | Update space
 *PartiesApi* | [**getParties**](docs/PartiesApi.md#getParties) | **GET** /api/parties | Get parties
 *ProfileApi* | [**currentUser**](docs/ProfileApi.md#currentUser) | **PUT** /api/profile | Update User Profile
 *ProfileApi* | [**getCurrentUser**](docs/ProfileApi.md#getCurrentUser) | **GET** /api/profile | Return User Profile
-*ProfileSpacesApi* | [**addSpaceCollaborators**](docs/ProfileSpacesApi.md#addSpaceCollaborators) | **POST** /api/profile/spaces/{spaceId}/collaborators | Add Space SpaceCollaborators
-*ProfileSpacesApi* | [**deleteUserSpace**](docs/ProfileSpacesApi.md#deleteUserSpace) | **DELETE** /api/profile/spaces/{spaceId} | Delete space
-*ProfileSpacesApi* | [**getSpaceCollaborators**](docs/ProfileSpacesApi.md#getSpaceCollaborators) | **GET** /api/profile/spaces/{spaceId}/collaborators | Get Space SpaceCollaborators
-*ProfileSpacesApi* | [**getUserSpace**](docs/ProfileSpacesApi.md#getUserSpace) | **GET** /api/profile/spaces/{spaceId} | Get Space
-*ProfileSpacesApi* | [**getUserSpaces**](docs/ProfileSpacesApi.md#getUserSpaces) | **GET** /api/profile/spaces | Get Spaces of user
-*ProfileSpacesApi* | [**removeSpaceCollaborators**](docs/ProfileSpacesApi.md#removeSpaceCollaborators) | **DELETE** /api/profile/spaces/{spaceId}/collaborators/{userId} | Remove Space SpaceCollaborators
-*ProfileSpacesApi* | [**updateUserSpace**](docs/ProfileSpacesApi.md#updateUserSpace) | **PUT** /api/profile/spaces/{spaceId} | Update space
-*SpaceRequestAccessApi* | [**getRequestAccess**](docs/SpaceRequestAccessApi.md#getRequestAccess) | **GET** /request-access | 
-*SpaceRequestAccessApi* | [**requestAccessToSpace**](docs/SpaceRequestAccessApi.md#requestAccessToSpace) | **POST** /request-access | 
-*SpaceRequestAccessApi* | [**updateAccessSpace**](docs/SpaceRequestAccessApi.md#updateAccessSpace) | **PUT** /request-access/{requestId} | 
+*RequestAccessApi* | [**getRequestAccess**](docs/RequestAccessApi.md#getRequestAccess) | **GET** /request-access | Get Request accesses
+*RequestAccessApi* | [**requestAccessToSpace**](docs/RequestAccessApi.md#requestAccessToSpace) | **POST** /request-access | Request access
+*RequestAccessApi* | [**updateAccessSpace**](docs/RequestAccessApi.md#updateAccessSpace) | **PUT** /request-access/{requestId} | Update request
 *SpacesApi* | [**createSpace**](docs/SpacesApi.md#createSpace) | **POST** /api/spaces | Create Space
 *SpacesApi* | [**getSpace**](docs/SpacesApi.md#getSpace) | **GET** /api/spaces/{spaceId} | Get Space
 *SpacesApi* | [**getSpaces**](docs/SpacesApi.md#getSpaces) | **GET** /api/spaces | Get Spaces
@@ -122,6 +122,7 @@ Class | Method | HTTP request | Description
  - [DocumentAttributes](docs/DocumentAttributes.md)
  - [DocumentData](docs/DocumentData.md)
  - [DocumentLink](docs/DocumentLink.md)
+ - [DocumentOwnedBy](docs/DocumentOwnedBy.md)
  - [DocumentQueryAttributes](docs/DocumentQueryAttributes.md)
  - [DocumentQueryData](docs/DocumentQueryData.md)
  - [DocumentQueryRepresentation](docs/DocumentQueryRepresentation.md)
@@ -137,7 +138,6 @@ Class | Method | HTTP request | Description
  - [InputPart](docs/InputPart.md)
  - [MediaType](docs/MediaType.md)
  - [MultipartFormDataInput](docs/MultipartFormDataInput.md)
- - [OwnedBy](docs/OwnedBy.md)
  - [PartyAttributes](docs/PartyAttributes.md)
  - [PartyData](docs/PartyData.md)
  - [RequestAttributes](docs/RequestAttributes.md)

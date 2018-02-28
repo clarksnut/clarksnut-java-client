@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * PartyData
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-28T21:48:42.893Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-28T23:15:11.911Z")
 public class PartyData {
   @SerializedName("id")
   private String id = null;

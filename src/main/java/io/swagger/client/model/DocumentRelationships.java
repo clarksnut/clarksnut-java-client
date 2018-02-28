@@ -8,18 +8,18 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.OwnedBy;
+import io.swagger.client.model.DocumentOwnedBy;
 import java.io.IOException;
 
 /**
  * DocumentRelationships
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-28T21:48:42.893Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-28T23:15:11.911Z")
 public class DocumentRelationships {
   @SerializedName("ownedBy")
-  private OwnedBy ownedBy = null;
+  private DocumentOwnedBy ownedBy = null;
 
-  public DocumentRelationships ownedBy(OwnedBy ownedBy) {
+  public DocumentRelationships ownedBy(DocumentOwnedBy ownedBy) {
     this.ownedBy = ownedBy;
     return this;
   }
@@ -29,11 +29,11 @@ public class DocumentRelationships {
    * @return ownedBy
   **/
   @ApiModelProperty(value = "")
-  public OwnedBy getOwnedBy() {
+  public DocumentOwnedBy getOwnedBy() {
     return ownedBy;
   }
 
-  public void setOwnedBy(OwnedBy ownedBy) {
+  public void setOwnedBy(DocumentOwnedBy ownedBy) {
     this.ownedBy = ownedBy;
   }
 

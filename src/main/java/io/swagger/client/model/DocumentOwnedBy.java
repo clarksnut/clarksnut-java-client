@@ -10,17 +10,27 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.client.model.SpaceData;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * SpaceRepresentation
+ * DocumentOwnedBy
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-28T23:15:11.911Z")
-public class SpaceRepresentation {
+public class DocumentOwnedBy {
   @SerializedName("data")
-  private SpaceData data = null;
+  private List<SpaceData> data = null;
 
-  public SpaceRepresentation data(SpaceData data) {
+  public DocumentOwnedBy data(List<SpaceData> data) {
     this.data = data;
+    return this;
+  }
+
+  public DocumentOwnedBy addDataItem(SpaceData dataItem) {
+    if (this.data == null) {
+      this.data = new ArrayList<SpaceData>();
+    }
+    this.data.add(dataItem);
     return this;
   }
 
@@ -29,11 +39,11 @@ public class SpaceRepresentation {
    * @return data
   **/
   @ApiModelProperty(value = "")
-  public SpaceData getData() {
+  public List<SpaceData> getData() {
     return data;
   }
 
-  public void setData(SpaceData data) {
+  public void setData(List<SpaceData> data) {
     this.data = data;
   }
 
@@ -46,8 +56,8 @@ public class SpaceRepresentation {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SpaceRepresentation spaceRepresentation = (SpaceRepresentation) o;
-    return Objects.equals(this.data, spaceRepresentation.data);
+    DocumentOwnedBy documentOwnedBy = (DocumentOwnedBy) o;
+    return Objects.equals(this.data, documentOwnedBy.data);
   }
 
   @Override
@@ -59,7 +69,7 @@ public class SpaceRepresentation {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SpaceRepresentation {\n");
+    sb.append("class DocumentOwnedBy {\n");
     
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");
