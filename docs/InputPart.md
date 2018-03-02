@@ -4,10 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bodyAsString** | **String** |  |  [optional]
 **contentTypeFromMessage** | **Boolean** |  |  [optional]
-**headers** | [**Map&lt;String, List&lt;String&gt;&gt;**](List.md) |  |  [optional]
+**bodyAsString** | **String** |  |  [optional]
 **mediaType** | [**MediaType**](MediaType.md) |  |  [optional]
+**headers** | [**Map&lt;String, List&lt;String&gt;&gt;**](List.md) |  |  [optional]
 
 
 

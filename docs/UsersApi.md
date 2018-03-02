@@ -55,7 +55,7 @@ No authorization required
 
 <a name="getUsers"></a>
 # **getUsers**
-> GenericDataRepresentationListUserData getUsers(username)
+> GenericDataRepresentationListUserData getUsers(username, filterText)
 
 Get Users
 
@@ -70,8 +70,9 @@ This will search users. [view-users] role required
 
 UsersApi apiInstance = new UsersApi();
 String username = "username_example"; // String | Username
+String filterText = "filterText_example"; // String | Filter Text
 try {
-    GenericDataRepresentationListUserData result = apiInstance.getUsers(username);
+    GenericDataRepresentationListUserData result = apiInstance.getUsers(username, filterText);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getUsers");
@@ -84,6 +85,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| Username | [optional]
+ **filterText** | **String**| Filter Text | [optional]
 
 ### Return type
 

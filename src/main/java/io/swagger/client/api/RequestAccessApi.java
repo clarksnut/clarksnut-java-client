@@ -57,7 +57,7 @@ public class RequestAccessApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/request-access";
+        String localVarPath = "/api/request-access";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -181,7 +181,7 @@ public class RequestAccessApi {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/request-access";
+        String localVarPath = "/api/request-access";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -295,7 +295,7 @@ public class RequestAccessApi {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/request-access/{requestId}"
+        String localVarPath = "/api/request-access/{requestId}"
             .replaceAll("\\{" + "requestId" + "\\}", apiClient.escapeString(requestId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();

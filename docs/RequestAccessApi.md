@@ -4,9 +4,9 @@ All URIs are relative to *https://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getRequestAccess**](RequestAccessApi.md#getRequestAccess) | **GET** /request-access | Get Request accesses
-[**requestAccessToSpace**](RequestAccessApi.md#requestAccessToSpace) | **POST** /request-access | Request access
-[**updateAccessSpace**](RequestAccessApi.md#updateAccessSpace) | **PUT** /request-access/{requestId} | Update request
+[**getRequestAccess**](RequestAccessApi.md#getRequestAccess) | **GET** /api/request-access | Get Request accesses
+[**requestAccessToSpace**](RequestAccessApi.md#requestAccessToSpace) | **POST** /api/request-access | Request access
+[**updateAccessSpace**](RequestAccessApi.md#updateAccessSpace) | **PUT** /api/request-access/{requestId} | Update request
 
 
 <a name="getRequestAccess"></a>

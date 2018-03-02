@@ -170,12 +170,13 @@ public class UsersApi {
     /**
      * Build call for getUsers
      * @param username Username (optional)
+     * @param filterText Filter Text (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getUsersCall(String username, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getUsersCall(String username, String filterText, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -185,6 +186,8 @@ public class UsersApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         if (username != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("username", username));
+        if (filterText != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("filterText", filterText));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -219,10 +222,10 @@ public class UsersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getUsersValidateBeforeCall(String username, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getUsersValidateBeforeCall(String username, String filterText, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getUsersCall(username, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getUsersCall(username, filterText, progressListener, progressRequestListener);
         return call;
 
     }
@@ -231,11 +234,12 @@ public class UsersApi {
      * Get Users
      * This will search users. [view-users] role required
      * @param username Username (optional)
+     * @param filterText Filter Text (optional)
      * @return GenericDataRepresentationListUserData
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GenericDataRepresentationListUserData getUsers(String username) throws ApiException {
-        ApiResponse<GenericDataRepresentationListUserData> resp = getUsersWithHttpInfo(username);
+    public GenericDataRepresentationListUserData getUsers(String username, String filterText) throws ApiException {
+        ApiResponse<GenericDataRepresentationListUserData> resp = getUsersWithHttpInfo(username, filterText);
         return resp.getData();
     }
 
@@ -243,11 +247,12 @@ public class UsersApi {
      * Get Users
      * This will search users. [view-users] role required
      * @param username Username (optional)
+     * @param filterText Filter Text (optional)
      * @return ApiResponse&lt;GenericDataRepresentationListUserData&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GenericDataRepresentationListUserData> getUsersWithHttpInfo(String username) throws ApiException {
-        com.squareup.okhttp.Call call = getUsersValidateBeforeCall(username, null, null);
+    public ApiResponse<GenericDataRepresentationListUserData> getUsersWithHttpInfo(String username, String filterText) throws ApiException {
+        com.squareup.okhttp.Call call = getUsersValidateBeforeCall(username, filterText, null, null);
         Type localVarReturnType = new TypeToken<GenericDataRepresentationListUserData>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -256,11 +261,12 @@ public class UsersApi {
      * Get Users (asynchronously)
      * This will search users. [view-users] role required
      * @param username Username (optional)
+     * @param filterText Filter Text (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getUsersAsync(String username, final ApiCallback<GenericDataRepresentationListUserData> callback) throws ApiException {
+    public com.squareup.okhttp.Call getUsersAsync(String username, String filterText, final ApiCallback<GenericDataRepresentationListUserData> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -281,7 +287,7 @@ public class UsersApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getUsersValidateBeforeCall(username, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getUsersValidateBeforeCall(username, filterText, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GenericDataRepresentationListUserData>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

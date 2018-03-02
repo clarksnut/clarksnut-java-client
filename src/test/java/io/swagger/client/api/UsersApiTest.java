@@ -47,7 +47,8 @@ public class UsersApiTest {
     @Test
     public void getUsersTest() throws ApiException {
         String username = null;
-        GenericDataRepresentationListUserData response = api.getUsers(username);
+        String filterText = null;
+        GenericDataRepresentationListUserData response = api.getUsers(username, filterText);
 
         // TODO: test validations
     }
