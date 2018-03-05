@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  * GenericLinksRepresentation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-02T13:36:37.501Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:20:58.350Z")
 public class GenericLinksRepresentation {
   @SerializedName("self")
   private String self = null;

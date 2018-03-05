@@ -21,9 +21,9 @@ public class UsersApiTest {
 
     
     /**
-     * Get User
+     * Return One User
      *
-     * This will return the requested user. [view-users] role required
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -37,9 +37,9 @@ public class UsersApiTest {
     }
     
     /**
-     * Get Users
+     * Return List of Users
      *
-     * This will search users. [view-users] role required
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -48,7 +48,9 @@ public class UsersApiTest {
     public void getUsersTest() throws ApiException {
         String username = null;
         String filterText = null;
-        GenericDataRepresentationListUserData response = api.getUsers(username, filterText);
+        Integer offset = null;
+        Integer limit = null;
+        GenericDataRepresentationListUserData response = api.getUsers(username, filterText, offset, limit);
 
         // TODO: test validations
     }

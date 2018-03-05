@@ -109,7 +109,7 @@ public class RequestAccessApi {
 
     /**
      * Get Request accesses
-     * This will return all requests on current user. [user] role required
+     * 
      * @param space Space Ids (optional)
      * @param status Status (optional, default to pending)
      * @return GenericDataRepresentationListRequestData
@@ -122,7 +122,7 @@ public class RequestAccessApi {
 
     /**
      * Get Request accesses
-     * This will return all requests on current user. [user] role required
+     * 
      * @param space Space Ids (optional)
      * @param status Status (optional, default to pending)
      * @return ApiResponse&lt;GenericDataRepresentationListRequestData&gt;
@@ -136,7 +136,7 @@ public class RequestAccessApi {
 
     /**
      * Get Request accesses (asynchronously)
-     * This will return all requests on current user. [user] role required
+     * 
      * @param space Space Ids (optional)
      * @param status Status (optional, default to pending)
      * @param callback The callback to be executed when the API call finishes
@@ -229,7 +229,7 @@ public class RequestAccessApi {
 
     /**
      * Request access
-     * This will request access to space. [user] role required
+     * 
      * @param body  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -239,7 +239,7 @@ public class RequestAccessApi {
 
     /**
      * Request access
-     * This will request access to space. [user] role required
+     * 
      * @param body  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -251,7 +251,7 @@ public class RequestAccessApi {
 
     /**
      * Request access (asynchronously)
-     * This will request access to space. [user] role required
+     * 
      * @param body  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -349,7 +349,7 @@ public class RequestAccessApi {
 
     /**
      * Update request
-     * This will accept or reject requests. [user] role required
+     * 
      * @param requestId Request Id (required)
      * @param body  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -360,7 +360,7 @@ public class RequestAccessApi {
 
     /**
      * Update request
-     * This will accept or reject requests. [user] role required
+     * 
      * @param requestId Request Id (required)
      * @param body  (optional)
      * @return ApiResponse&lt;Void&gt;
@@ -373,7 +373,7 @@ public class RequestAccessApi {
 
     /**
      * Update request (asynchronously)
-     * This will accept or reject requests. [user] role required
+     * 
      * @param requestId Request Id (required)
      * @param body  (optional)
      * @param callback The callback to be executed when the API call finishes

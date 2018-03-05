@@ -4,22 +4,114 @@ All URIs are relative to *https://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getDocument**](DocumentsApi.md#getDocument) | **GET** /api/documents/{documentId} | Get Document
-[**getDocuments**](DocumentsApi.md#getDocuments) | **GET** /api/documents | Get Documents
-[**getXml**](DocumentsApi.md#getXml) | **GET** /api/documents/{documentId}/download | Download Document
+[**downloadPdf**](DocumentsApi.md#downloadPdf) | **GET** /api/documents/{documentId}/print | Print Document
+[**downloadXml**](DocumentsApi.md#downloadXml) | **GET** /api/documents/{documentId}/download | Download Document
+[**getDocument**](DocumentsApi.md#getDocument) | **GET** /api/documents/{documentId} | Return one Document
+[**getDocuments**](DocumentsApi.md#getDocuments) | **GET** /api/documents | Return List of Documents
 [**importDocument**](DocumentsApi.md#importDocument) | **POST** /api/documents | Import Document
-[**printDocument**](DocumentsApi.md#printDocument) | **GET** /api/documents/{documentId}/print | Print Document
 [**searchDocuments**](DocumentsApi.md#searchDocuments) | **POST** /api/documents/search | Search Document
-[**updateDocument**](DocumentsApi.md#updateDocument) | **PUT** /api/documents/{documentId} | Update Document
+[**updateDocument**](DocumentsApi.md#updateDocument) | **PUT** /api/documents/{documentId} | Update a Document
 
+
+<a name="downloadPdf"></a>
+# **downloadPdf**
+> downloadPdf(documentId, theme, format)
+
+Print Document
+
+User need to have access to the Space owner of the document
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiException;
+//import io.swagger.client.api.DocumentsApi;
+
+
+DocumentsApi apiInstance = new DocumentsApi();
+String documentId = "documentId_example"; // String | Document Id
+String theme = "theme_example"; // String | Theme
+String format = "pdf"; // String | format
+try {
+    apiInstance.downloadPdf(documentId, theme, format);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DocumentsApi#downloadPdf");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **documentId** | **String**| Document Id |
+ **theme** | **String**| Theme | [optional]
+ **format** | **String**| format | [optional] [default to pdf] [enum: pdf, html]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+<a name="downloadXml"></a>
+# **downloadXml**
+> downloadXml(documentId)
+
+Download Document
+
+User need to have access to the Space owner of the document
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiException;
+//import io.swagger.client.api.DocumentsApi;
+
+
+DocumentsApi apiInstance = new DocumentsApi();
+String documentId = "documentId_example"; // String | Document Id
+try {
+    apiInstance.downloadXml(documentId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DocumentsApi#downloadXml");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **documentId** | **String**| Document Id |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/xml
 
 <a name="getDocument"></a>
 # **getDocument**
 > DocumentRepresentation getDocument(documentId)
 
-Get Document
+Return one Document
 
-This will return a document
+User need to have access to the Space owner of the document
 
 ### Example
 ```java
@@ -60,11 +152,11 @@ No authorization required
 
 <a name="getDocuments"></a>
 # **getDocuments**
-> GenericDataRepresentationListDocumentData getDocuments(q, offset, limit, space)
+> GenericDataRepresentationListDocumentData getDocuments(filterText, offset, limit, space)
 
-Get Documents
+Return List of Documents
 
-This will search just on Owned and Collaborated Spaces
+Search on allowed user (session) spaces
 
 ### Example
 ```java
@@ -74,12 +166,12 @@ This will search just on Owned and Collaborated Spaces
 
 
 DocumentsApi apiInstance = new DocumentsApi();
-String q = "q_example"; // String | A text for filter results
-Integer offset = 0; // Integer | The first position of array results
-Integer limit = 10; // Integer | The max number of results
-List<String> space = Arrays.asList("space_example"); // List<String> | List of space ids to search in. If null or empty all allowed spaces of user will be used
+String filterText = "filterText_example"; // String | Filter text
+Integer offset = 0; // Integer | First result
+Integer limit = 10; // Integer | Maz results
+List<String> space = Arrays.asList("space_example"); // List<String> | Space Ids
 try {
-    GenericDataRepresentationListDocumentData result = apiInstance.getDocuments(q, offset, limit, space);
+    GenericDataRepresentationListDocumentData result = apiInstance.getDocuments(filterText, offset, limit, space);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DocumentsApi#getDocuments");
@@ -91,10 +183,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **q** | **String**| A text for filter results | [optional]
- **offset** | **Integer**| The first position of array results | [optional] [default to 0]
- **limit** | **Integer**| The max number of results | [optional] [default to 10]
- **space** | [**List&lt;String&gt;**](String.md)| List of space ids to search in. If null or empty all allowed spaces of user will be used | [optional]
+ **filterText** | **String**| Filter text | [optional]
+ **offset** | **Integer**| First result | [optional] [default to 0]
+ **limit** | **Integer**| Maz results | [optional] [default to 10]
+ **space** | [**List&lt;String&gt;**](String.md)| Space Ids | [optional]
 
 ### Return type
 
@@ -108,50 +200,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
-<a name="getXml"></a>
-# **getXml**
-> getXml(documentId)
-
-Download Document
-
-This will download the document
-
-### Example
-```java
-// Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.DocumentsApi;
-
-
-DocumentsApi apiInstance = new DocumentsApi();
-String documentId = "documentId_example"; // String | Document Id
-try {
-    apiInstance.getXml(documentId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DocumentsApi#getXml");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **documentId** | **String**| Document Id |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/xml
 
 <a name="importDocument"></a>
 # **importDocument**
@@ -197,61 +245,13 @@ No authorization required
  - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
-<a name="printDocument"></a>
-# **printDocument**
-> printDocument(documentId, theme, format)
-
-Print Document
-
-This will print the document
-
-### Example
-```java
-// Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.DocumentsApi;
-
-
-DocumentsApi apiInstance = new DocumentsApi();
-String documentId = "documentId_example"; // String | Document Id
-String theme = "theme_example"; // String | Theme
-String format = "pdf"; // String | format
-try {
-    apiInstance.printDocument(documentId, theme, format);
-} catch (ApiException e) {
-    System.err.println("Exception when calling DocumentsApi#printDocument");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **documentId** | **String**| Document Id |
- **theme** | **String**| Theme | [optional]
- **format** | **String**| format | [optional] [default to pdf] [enum: pdf, html]
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
 <a name="searchDocuments"></a>
 # **searchDocuments**
 > GenericDataRepresentationListDocumentData searchDocuments(body)
 
 Search Document
 
-This will search document in advanced mode
+Search on allowed user (session) spaces
 
 ### Example
 ```java
@@ -294,9 +294,9 @@ No authorization required
 # **updateDocument**
 > DocumentRepresentation updateDocument(documentId, body)
 
-Update Document
+Update a Document
 
-This will update the document just for current user
+User need to have access to the Space owner of the document
 
 ### Example
 ```java

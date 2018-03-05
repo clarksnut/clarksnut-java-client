@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Update User Profile
 
-This will update the profile associated to the current token. [user] role required
+[user] role required
 
 ### Example
 ```java
@@ -59,7 +59,7 @@ No authorization required
 
 Return User Profile
 
-This will return the profile associated to the current token. [user] role required
+[user] role required
 
 ### Example
 ```java

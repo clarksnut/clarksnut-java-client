@@ -16,7 +16,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import io.swagger.client.model.GenericDataRepresentationListPartyData;
+import io.swagger.client.model.GenericDataRepresentationListSpaceData;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -24,14 +24,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class PartiesApi {
+public class NamedSpacesApi {
     private ApiClient apiClient;
 
-    public PartiesApi() {
+    public NamedSpacesApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public PartiesApi(ApiClient apiClient) {
+    public NamedSpacesApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -44,32 +44,31 @@ public class PartiesApi {
     }
 
     /**
-     * Build call for getParties
-     * @param filterText Filter Text (optional)
+     * Build call for getUserSpaces
+     * @param userId User Id (required)
+     * @param role Role (optional, default to owner)
      * @param offset First result (optional, default to 0)
-     * @param limit Max result (optional, default to 10)
-     * @param space Space Ids (optional)
+     * @param limit Max results (optional, default to 10)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getPartiesCall(String filterText, Integer offset, Integer limit, List<String> space, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getUserSpacesCall(String userId, String role, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/parties";
+        String localVarPath = "/api/namedspaces/{userId}"
+            .replaceAll("\\{" + "userId" + "\\}", apiClient.escapeString(userId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (filterText != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("filterText", filterText));
+        if (role != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("role", role));
         if (offset != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
         if (limit != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
-        if (space != null)
-        localVarCollectionQueryParams.addAll(apiClient.parameterToPairs("multi", "space", space));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -104,57 +103,62 @@ public class PartiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getPartiesValidateBeforeCall(String filterText, Integer offset, Integer limit, List<String> space, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getUserSpacesValidateBeforeCall(String userId, String role, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'userId' is set
+        if (userId == null) {
+            throw new ApiException("Missing the required parameter 'userId' when calling getUserSpaces(Async)");
+        }
         
 
-        com.squareup.okhttp.Call call = getPartiesCall(filterText, offset, limit, space, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getUserSpacesCall(userId, role, offset, limit, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
-     * Get parties
-     * This will search parties on allowed spaces and current user
-     * @param filterText Filter Text (optional)
+     * Return allowed Spaces of User
+     * [view-users] role required
+     * @param userId User Id (required)
+     * @param role Role (optional, default to owner)
      * @param offset First result (optional, default to 0)
-     * @param limit Max result (optional, default to 10)
-     * @param space Space Ids (optional)
-     * @return GenericDataRepresentationListPartyData
+     * @param limit Max results (optional, default to 10)
+     * @return GenericDataRepresentationListSpaceData
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GenericDataRepresentationListPartyData getParties(String filterText, Integer offset, Integer limit, List<String> space) throws ApiException {
-        ApiResponse<GenericDataRepresentationListPartyData> resp = getPartiesWithHttpInfo(filterText, offset, limit, space);
+    public GenericDataRepresentationListSpaceData getUserSpaces(String userId, String role, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<GenericDataRepresentationListSpaceData> resp = getUserSpacesWithHttpInfo(userId, role, offset, limit);
         return resp.getData();
     }
 
     /**
-     * Get parties
-     * This will search parties on allowed spaces and current user
-     * @param filterText Filter Text (optional)
+     * Return allowed Spaces of User
+     * [view-users] role required
+     * @param userId User Id (required)
+     * @param role Role (optional, default to owner)
      * @param offset First result (optional, default to 0)
-     * @param limit Max result (optional, default to 10)
-     * @param space Space Ids (optional)
-     * @return ApiResponse&lt;GenericDataRepresentationListPartyData&gt;
+     * @param limit Max results (optional, default to 10)
+     * @return ApiResponse&lt;GenericDataRepresentationListSpaceData&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GenericDataRepresentationListPartyData> getPartiesWithHttpInfo(String filterText, Integer offset, Integer limit, List<String> space) throws ApiException {
-        com.squareup.okhttp.Call call = getPartiesValidateBeforeCall(filterText, offset, limit, space, null, null);
-        Type localVarReturnType = new TypeToken<GenericDataRepresentationListPartyData>(){}.getType();
+    public ApiResponse<GenericDataRepresentationListSpaceData> getUserSpacesWithHttpInfo(String userId, String role, Integer offset, Integer limit) throws ApiException {
+        com.squareup.okhttp.Call call = getUserSpacesValidateBeforeCall(userId, role, offset, limit, null, null);
+        Type localVarReturnType = new TypeToken<GenericDataRepresentationListSpaceData>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Get parties (asynchronously)
-     * This will search parties on allowed spaces and current user
-     * @param filterText Filter Text (optional)
+     * Return allowed Spaces of User (asynchronously)
+     * [view-users] role required
+     * @param userId User Id (required)
+     * @param role Role (optional, default to owner)
      * @param offset First result (optional, default to 0)
-     * @param limit Max result (optional, default to 10)
-     * @param space Space Ids (optional)
+     * @param limit Max results (optional, default to 10)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getPartiesAsync(String filterText, Integer offset, Integer limit, List<String> space, final ApiCallback<GenericDataRepresentationListPartyData> callback) throws ApiException {
+    public com.squareup.okhttp.Call getUserSpacesAsync(String userId, String role, Integer offset, Integer limit, final ApiCallback<GenericDataRepresentationListSpaceData> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -175,8 +179,8 @@ public class PartiesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getPartiesValidateBeforeCall(filterText, offset, limit, space, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GenericDataRepresentationListPartyData>(){}.getType();
+        com.squareup.okhttp.Call call = getUserSpacesValidateBeforeCall(userId, role, offset, limit, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<GenericDataRepresentationListSpaceData>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

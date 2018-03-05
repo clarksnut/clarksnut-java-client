@@ -23,9 +23,43 @@ public class DocumentsApiTest {
 
     
     /**
-     * Get Document
+     * Print Document
      *
-     * This will return a document
+     * User need to have access to the Space owner of the document
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void downloadPdfTest() throws ApiException {
+        String documentId = null;
+        String theme = null;
+        String format = null;
+        api.downloadPdf(documentId, theme, format);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Download Document
+     *
+     * User need to have access to the Space owner of the document
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void downloadXmlTest() throws ApiException {
+        String documentId = null;
+        api.downloadXml(documentId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Return one Document
+     *
+     * User need to have access to the Space owner of the document
      *
      * @throws ApiException
      *          if the Api call fails
@@ -39,36 +73,20 @@ public class DocumentsApiTest {
     }
     
     /**
-     * Get Documents
+     * Return List of Documents
      *
-     * This will search just on Owned and Collaborated Spaces
+     * Search on allowed user (session) spaces
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
     public void getDocumentsTest() throws ApiException {
-        String q = null;
+        String filterText = null;
         Integer offset = null;
         Integer limit = null;
         List<String> space = null;
-        GenericDataRepresentationListDocumentData response = api.getDocuments(q, offset, limit, space);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Download Document
-     *
-     * This will download the document
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getXmlTest() throws ApiException {
-        String documentId = null;
-        api.getXml(documentId);
+        GenericDataRepresentationListDocumentData response = api.getDocuments(filterText, offset, limit, space);
 
         // TODO: test validations
     }
@@ -90,27 +108,9 @@ public class DocumentsApiTest {
     }
     
     /**
-     * Print Document
-     *
-     * This will print the document
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void printDocumentTest() throws ApiException {
-        String documentId = null;
-        String theme = null;
-        String format = null;
-        api.printDocument(documentId, theme, format);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Search Document
      *
-     * This will search document in advanced mode
+     * Search on allowed user (session) spaces
      *
      * @throws ApiException
      *          if the Api call fails
@@ -124,9 +124,9 @@ public class DocumentsApiTest {
     }
     
     /**
-     * Update Document
+     * Update a Document
      *
-     * This will update the document just for current user
+     * User need to have access to the Space owner of the document
      *
      * @throws ApiException
      *          if the Api call fails

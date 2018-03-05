@@ -103,7 +103,7 @@ public class ProfileApi {
 
     /**
      * Update User Profile
-     * This will update the profile associated to the current token. [user] role required
+     * [user] role required
      * @param body  (optional)
      * @return UserRepresentation
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -115,7 +115,7 @@ public class ProfileApi {
 
     /**
      * Update User Profile
-     * This will update the profile associated to the current token. [user] role required
+     * [user] role required
      * @param body  (optional)
      * @return ApiResponse&lt;UserRepresentation&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -128,7 +128,7 @@ public class ProfileApi {
 
     /**
      * Update User Profile (asynchronously)
-     * This will update the profile associated to the current token. [user] role required
+     * [user] role required
      * @param body  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -219,7 +219,7 @@ public class ProfileApi {
 
     /**
      * Return User Profile
-     * This will return the profile associated to the current token. [user] role required
+     * [user] role required
      * @return UserRepresentation
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -230,7 +230,7 @@ public class ProfileApi {
 
     /**
      * Return User Profile
-     * This will return the profile associated to the current token. [user] role required
+     * [user] role required
      * @return ApiResponse&lt;UserRepresentation&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -242,7 +242,7 @@ public class ProfileApi {
 
     /**
      * Return User Profile (asynchronously)
-     * This will return the profile associated to the current token. [user] role required
+     * [user] role required
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

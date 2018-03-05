@@ -16,7 +16,7 @@ import java.util.Map;
 /**
  * MediaType
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-02T13:36:37.501Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:20:58.350Z")
 public class MediaType {
   @SerializedName("type")
   private String type = null;
@@ -27,11 +27,11 @@ public class MediaType {
   @SerializedName("parameters")
   private Map<String, String> parameters = null;
 
-  @SerializedName("wildcardType")
-  private Boolean wildcardType = null;
-
   @SerializedName("wildcardSubtype")
   private Boolean wildcardSubtype = null;
+
+  @SerializedName("wildcardType")
+  private Boolean wildcardType = null;
 
   public MediaType type(String type) {
     this.type = type;
@@ -95,24 +95,6 @@ public class MediaType {
     this.parameters = parameters;
   }
 
-  public MediaType wildcardType(Boolean wildcardType) {
-    this.wildcardType = wildcardType;
-    return this;
-  }
-
-   /**
-   * Get wildcardType
-   * @return wildcardType
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isWildcardType() {
-    return wildcardType;
-  }
-
-  public void setWildcardType(Boolean wildcardType) {
-    this.wildcardType = wildcardType;
-  }
-
   public MediaType wildcardSubtype(Boolean wildcardSubtype) {
     this.wildcardSubtype = wildcardSubtype;
     return this;
@@ -131,6 +113,24 @@ public class MediaType {
     this.wildcardSubtype = wildcardSubtype;
   }
 
+  public MediaType wildcardType(Boolean wildcardType) {
+    this.wildcardType = wildcardType;
+    return this;
+  }
+
+   /**
+   * Get wildcardType
+   * @return wildcardType
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isWildcardType() {
+    return wildcardType;
+  }
+
+  public void setWildcardType(Boolean wildcardType) {
+    this.wildcardType = wildcardType;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -144,13 +144,13 @@ public class MediaType {
     return Objects.equals(this.type, mediaType.type) &&
         Objects.equals(this.subtype, mediaType.subtype) &&
         Objects.equals(this.parameters, mediaType.parameters) &&
-        Objects.equals(this.wildcardType, mediaType.wildcardType) &&
-        Objects.equals(this.wildcardSubtype, mediaType.wildcardSubtype);
+        Objects.equals(this.wildcardSubtype, mediaType.wildcardSubtype) &&
+        Objects.equals(this.wildcardType, mediaType.wildcardType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, subtype, parameters, wildcardType, wildcardSubtype);
+    return Objects.hash(type, subtype, parameters, wildcardSubtype, wildcardType);
   }
 
 
@@ -162,8 +162,8 @@ public class MediaType {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    subtype: ").append(toIndentedString(subtype)).append("\n");
     sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
-    sb.append("    wildcardType: ").append(toIndentedString(wildcardType)).append("\n");
     sb.append("    wildcardSubtype: ").append(toIndentedString(wildcardSubtype)).append("\n");
+    sb.append("    wildcardType: ").append(toIndentedString(wildcardType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

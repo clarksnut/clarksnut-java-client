@@ -22,7 +22,7 @@ public class ProfileApiTest {
     /**
      * Update User Profile
      *
-     * This will update the profile associated to the current token. [user] role required
+     * [user] role required
      *
      * @throws ApiException
      *          if the Api call fails
@@ -38,7 +38,7 @@ public class ProfileApiTest {
     /**
      * Return User Profile
      *
-     * This will return the profile associated to the current token. [user] role required
+     * [user] role required
      *
      * @throws ApiException
      *          if the Api call fails

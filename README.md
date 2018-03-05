@@ -72,11 +72,12 @@ public class DocumentsApiExample {
         
         DocumentsApi apiInstance = new DocumentsApi();
         String documentId = "documentId_example"; // String | Document Id
+        String theme = "theme_example"; // String | Theme
+        String format = "pdf"; // String | format
         try {
-            DocumentRepresentation result = apiInstance.getDocument(documentId);
-            System.out.println(result);
+            apiInstance.downloadPdf(documentId, theme, format);
         } catch (ApiException e) {
-            System.err.println("Exception when calling DocumentsApi#getDocument");
+            System.err.println("Exception when calling DocumentsApi#downloadPdf");
             e.printStackTrace();
         }
     }
@@ -90,31 +91,30 @@ All URIs are relative to *https://localhost:8080*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DocumentsApi* | [**getDocument**](docs/DocumentsApi.md#getDocument) | **GET** /api/documents/{documentId} | Get Document
-*DocumentsApi* | [**getDocuments**](docs/DocumentsApi.md#getDocuments) | **GET** /api/documents | Get Documents
-*DocumentsApi* | [**getXml**](docs/DocumentsApi.md#getXml) | **GET** /api/documents/{documentId}/download | Download Document
+*DocumentsApi* | [**downloadPdf**](docs/DocumentsApi.md#downloadPdf) | **GET** /api/documents/{documentId}/print | Print Document
+*DocumentsApi* | [**downloadXml**](docs/DocumentsApi.md#downloadXml) | **GET** /api/documents/{documentId}/download | Download Document
+*DocumentsApi* | [**getDocument**](docs/DocumentsApi.md#getDocument) | **GET** /api/documents/{documentId} | Return one Document
+*DocumentsApi* | [**getDocuments**](docs/DocumentsApi.md#getDocuments) | **GET** /api/documents | Return List of Documents
 *DocumentsApi* | [**importDocument**](docs/DocumentsApi.md#importDocument) | **POST** /api/documents | Import Document
-*DocumentsApi* | [**printDocument**](docs/DocumentsApi.md#printDocument) | **GET** /api/documents/{documentId}/print | Print Document
 *DocumentsApi* | [**searchDocuments**](docs/DocumentsApi.md#searchDocuments) | **POST** /api/documents/search | Search Document
-*DocumentsApi* | [**updateDocument**](docs/DocumentsApi.md#updateDocument) | **PUT** /api/documents/{documentId} | Update Document
-*NamespacesApi* | [**addSpaceCollaborators**](docs/NamespacesApi.md#addSpaceCollaborators) | **POST** /api/namespaces/{spaceId}/collaborators | Add Space SpaceCollaborators
-*NamespacesApi* | [**deleteUserSpace**](docs/NamespacesApi.md#deleteUserSpace) | **DELETE** /api/namespaces/{spaceId} | Delete space
-*NamespacesApi* | [**getSpaceCollaborators**](docs/NamespacesApi.md#getSpaceCollaborators) | **GET** /api/namespaces/{spaceId}/collaborators | Get Space SpaceCollaborators
-*NamespacesApi* | [**getUserSpace**](docs/NamespacesApi.md#getUserSpace) | **GET** /api/namespaces/{spaceId} | Get Space
-*NamespacesApi* | [**getUserSpaces**](docs/NamespacesApi.md#getUserSpaces) | **GET** /api/namespaces | Get Spaces of user
-*NamespacesApi* | [**removeSpaceCollaborators**](docs/NamespacesApi.md#removeSpaceCollaborators) | **DELETE** /api/namespaces/{spaceId}/collaborators/{userId} | Remove Space SpaceCollaborators
-*NamespacesApi* | [**updateUserSpace**](docs/NamespacesApi.md#updateUserSpace) | **PUT** /api/namespaces/{spaceId} | Update space
+*DocumentsApi* | [**updateDocument**](docs/DocumentsApi.md#updateDocument) | **PUT** /api/documents/{documentId} | Update a Document
+*NamedSpacesApi* | [**getUserSpaces**](docs/NamedSpacesApi.md#getUserSpaces) | **GET** /api/namedspaces/{userId} | Return allowed Spaces of User
 *PartiesApi* | [**getParties**](docs/PartiesApi.md#getParties) | **GET** /api/parties | Get parties
 *ProfileApi* | [**currentUser**](docs/ProfileApi.md#currentUser) | **PUT** /api/profile | Update User Profile
 *ProfileApi* | [**getCurrentUser**](docs/ProfileApi.md#getCurrentUser) | **GET** /api/profile | Return User Profile
 *RequestAccessApi* | [**getRequestAccess**](docs/RequestAccessApi.md#getRequestAccess) | **GET** /api/request-access | Get Request accesses
 *RequestAccessApi* | [**requestAccessToSpace**](docs/RequestAccessApi.md#requestAccessToSpace) | **POST** /api/request-access | Request access
 *RequestAccessApi* | [**updateAccessSpace**](docs/RequestAccessApi.md#updateAccessSpace) | **PUT** /api/request-access/{requestId} | Update request
-*SpacesApi* | [**createSpace**](docs/SpacesApi.md#createSpace) | **POST** /api/spaces | Create Space
-*SpacesApi* | [**getSpace**](docs/SpacesApi.md#getSpace) | **GET** /api/spaces/{spaceId} | Get Space
-*SpacesApi* | [**getSpaces**](docs/SpacesApi.md#getSpaces) | **GET** /api/spaces | Get Spaces
-*UsersApi* | [**getUser**](docs/UsersApi.md#getUser) | **GET** /api/users/{userId} | Get User
-*UsersApi* | [**getUsers**](docs/UsersApi.md#getUsers) | **GET** /api/users | Get Users
+*SpacesApi* | [**addSpaceCollaborators**](docs/SpacesApi.md#addSpaceCollaborators) | **POST** /api/spaces/{spaceId}/collaborators | Add new Collaborator
+*SpacesApi* | [**createSpace**](docs/SpacesApi.md#createSpace) | **POST** /api/spaces | Create new Space
+*SpacesApi* | [**deleteUserSpace**](docs/SpacesApi.md#deleteUserSpace) | **DELETE** /api/spaces/{spaceId} | Delete space
+*SpacesApi* | [**getSpace**](docs/SpacesApi.md#getSpace) | **GET** /api/spaces/{spaceId} | Return one Space
+*SpacesApi* | [**getSpaceCollaborators**](docs/SpacesApi.md#getSpaceCollaborators) | **GET** /api/spaces/{spaceId}/collaborators | Return list of Collaborators
+*SpacesApi* | [**getSpaces**](docs/SpacesApi.md#getSpaces) | **GET** /api/spaces | Return list of Spaces
+*SpacesApi* | [**removeSpaceCollaborators**](docs/SpacesApi.md#removeSpaceCollaborators) | **DELETE** /api/spaces/{spaceId}/collaborators/{userId} | Remove Collaborator
+*SpacesApi* | [**updateUserSpace**](docs/SpacesApi.md#updateUserSpace) | **PUT** /api/spaces/{spaceId} | Update space
+*UsersApi* | [**getUser**](docs/UsersApi.md#getUser) | **GET** /api/users/{userId} | Return One User
+*UsersApi* | [**getUsers**](docs/UsersApi.md#getUsers) | **GET** /api/users | Return List of Users
 
 
 ## Documentation for Models

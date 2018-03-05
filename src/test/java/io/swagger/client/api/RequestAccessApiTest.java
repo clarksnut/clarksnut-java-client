@@ -23,7 +23,7 @@ public class RequestAccessApiTest {
     /**
      * Get Request accesses
      *
-     * This will return all requests on current user. [user] role required
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -40,7 +40,7 @@ public class RequestAccessApiTest {
     /**
      * Request access
      *
-     * This will request access to space. [user] role required
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -56,7 +56,7 @@ public class RequestAccessApiTest {
     /**
      * Update request
      *
-     * This will accept or reject requests. [user] role required
+     * 
      *
      * @throws ApiException
      *          if the Api call fails

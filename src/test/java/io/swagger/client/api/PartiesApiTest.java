@@ -29,11 +29,11 @@ public class PartiesApiTest {
      */
     @Test
     public void getPartiesTest() throws ApiException {
-        String q = null;
+        String filterText = null;
         Integer offset = null;
         Integer limit = null;
         List<String> space = null;
-        GenericDataRepresentationListPartyData response = api.getParties(q, offset, limit, space);
+        GenericDataRepresentationListPartyData response = api.getParties(filterText, offset, limit, space);
 
         // TODO: test validations
     }

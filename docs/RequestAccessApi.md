@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 Get Request accesses
 
-This will return all requests on current user. [user] role required
+
 
 ### Example
 ```java
@@ -62,7 +62,7 @@ No authorization required
 
 Request access
 
-This will request access to space. [user] role required
+
 
 ### Example
 ```java
@@ -106,7 +106,7 @@ No authorization required
 
 Update request
 
-This will accept or reject requests. [user] role required
+
 
 ### Example
 ```java

@@ -4,17 +4,17 @@ All URIs are relative to *https://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getUser**](UsersApi.md#getUser) | **GET** /api/users/{userId} | Get User
-[**getUsers**](UsersApi.md#getUsers) | **GET** /api/users | Get Users
+[**getUser**](UsersApi.md#getUser) | **GET** /api/users/{userId} | Return One User
+[**getUsers**](UsersApi.md#getUsers) | **GET** /api/users | Return List of Users
 
 
 <a name="getUser"></a>
 # **getUser**
 > UserRepresentation getUser(userId)
 
-Get User
+Return One User
 
-This will return the requested user. [view-users] role required
+
 
 ### Example
 ```java
@@ -55,11 +55,11 @@ No authorization required
 
 <a name="getUsers"></a>
 # **getUsers**
-> GenericDataRepresentationListUserData getUsers(username, filterText)
+> GenericDataRepresentationListUserData getUsers(username, filterText, offset, limit)
 
-Get Users
+Return List of Users
 
-This will search users. [view-users] role required
+
 
 ### Example
 ```java
@@ -71,8 +71,10 @@ This will search users. [view-users] role required
 UsersApi apiInstance = new UsersApi();
 String username = "username_example"; // String | Username
 String filterText = "filterText_example"; // String | Filter Text
+Integer offset = 0; // Integer | First result
+Integer limit = 10; // Integer | Max results
 try {
-    GenericDataRepresentationListUserData result = apiInstance.getUsers(username, filterText);
+    GenericDataRepresentationListUserData result = apiInstance.getUsers(username, filterText, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getUsers");
@@ -86,6 +88,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| Username | [optional]
  **filterText** | **String**| Filter Text | [optional]
+ **offset** | **Integer**| First result | [optional] [default to 0]
+ **limit** | **Integer**| Max results | [optional] [default to 10]
 
 ### Return type
 
