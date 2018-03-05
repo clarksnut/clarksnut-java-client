@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * DocumentOwnedBy
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:20:58.350Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:25:36.501Z")
 public class DocumentOwnedBy {
   @SerializedName("data")
   private List<SpaceData> data = null;

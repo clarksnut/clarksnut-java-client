@@ -14,7 +14,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * RequestAttributes
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:20:58.350Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:25:36.501Z")
 public class RequestAttributes {
   @SerializedName("space")
   private String space = null;

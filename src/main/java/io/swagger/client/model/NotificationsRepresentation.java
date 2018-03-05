@@ -8,18 +8,18 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.DocumentData;
+import io.swagger.client.model.NotificationsData;
 import java.io.IOException;
 
 /**
- * DocumentRepresentation
+ * NotificationsRepresentation
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:25:36.501Z")
-public class DocumentRepresentation {
+public class NotificationsRepresentation {
   @SerializedName("data")
-  private DocumentData data = null;
+  private NotificationsData data = null;
 
-  public DocumentRepresentation data(DocumentData data) {
+  public NotificationsRepresentation data(NotificationsData data) {
     this.data = data;
     return this;
   }
@@ -29,11 +29,11 @@ public class DocumentRepresentation {
    * @return data
   **/
   @ApiModelProperty(value = "")
-  public DocumentData getData() {
+  public NotificationsData getData() {
     return data;
   }
 
-  public void setData(DocumentData data) {
+  public void setData(NotificationsData data) {
     this.data = data;
   }
 
@@ -46,8 +46,8 @@ public class DocumentRepresentation {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DocumentRepresentation documentRepresentation = (DocumentRepresentation) o;
-    return Objects.equals(this.data, documentRepresentation.data);
+    NotificationsRepresentation notificationsRepresentation = (NotificationsRepresentation) o;
+    return Objects.equals(this.data, notificationsRepresentation.data);
   }
 
   @Override
@@ -59,7 +59,7 @@ public class DocumentRepresentation {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DocumentRepresentation {\n");
+    sb.append("class NotificationsRepresentation {\n");
     
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");

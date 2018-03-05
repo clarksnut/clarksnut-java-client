@@ -20,25 +20,9 @@ public class ProfileApiTest {
 
     
     /**
-     * Update User Profile
-     *
-     * [user] role required
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void currentUserTest() throws ApiException {
-        UserRepresentation body = null;
-        UserRepresentation response = api.currentUser(body);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Return User Profile
      *
-     * [user] role required
+     * 
      *
      * @throws ApiException
      *          if the Api call fails

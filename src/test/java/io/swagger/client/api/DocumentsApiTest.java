@@ -1,9 +1,7 @@
 package io.swagger.client.api;
 
 import io.swagger.client.ApiException;
-import io.swagger.client.model.DocumentQueryRepresentation;
 import io.swagger.client.model.DocumentRepresentation;
-import io.swagger.client.model.GenericDataRepresentationListDocumentData;
 import io.swagger.client.model.MultipartFormDataInput;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -25,17 +23,18 @@ public class DocumentsApiTest {
     /**
      * Print Document
      *
-     * User need to have access to the Space owner of the document
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void downloadPdfTest() throws ApiException {
+    public void downloadDocumentPdfTest() throws ApiException {
         String documentId = null;
         String theme = null;
+        String locale = null;
         String format = null;
-        api.downloadPdf(documentId, theme, format);
+        api.downloadDocumentPdf(documentId, theme, locale, format);
 
         // TODO: test validations
     }
@@ -43,15 +42,15 @@ public class DocumentsApiTest {
     /**
      * Download Document
      *
-     * User need to have access to the Space owner of the document
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void downloadXmlTest() throws ApiException {
+    public void downloadDocumentXmlTest() throws ApiException {
         String documentId = null;
-        api.downloadXml(documentId);
+        api.downloadDocumentXml(documentId);
 
         // TODO: test validations
     }
@@ -59,7 +58,7 @@ public class DocumentsApiTest {
     /**
      * Return one Document
      *
-     * User need to have access to the Space owner of the document
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -73,28 +72,9 @@ public class DocumentsApiTest {
     }
     
     /**
-     * Return List of Documents
-     *
-     * Search on allowed user (session) spaces
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getDocumentsTest() throws ApiException {
-        String filterText = null;
-        Integer offset = null;
-        Integer limit = null;
-        List<String> space = null;
-        GenericDataRepresentationListDocumentData response = api.getDocuments(filterText, offset, limit, space);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Import Document
      *
-     * This will import xml or compressed files
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
@@ -103,39 +83,6 @@ public class DocumentsApiTest {
     public void importDocumentTest() throws ApiException {
         MultipartFormDataInput body = null;
         api.importDocument(body);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Search Document
-     *
-     * Search on allowed user (session) spaces
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void searchDocumentsTest() throws ApiException {
-        DocumentQueryRepresentation body = null;
-        GenericDataRepresentationListDocumentData response = api.searchDocuments(body);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Update a Document
-     *
-     * User need to have access to the Space owner of the document
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void updateDocumentTest() throws ApiException {
-        String documentId = null;
-        DocumentRepresentation body = null;
-        DocumentRepresentation response = api.updateDocument(documentId, body);
 
         // TODO: test validations
     }

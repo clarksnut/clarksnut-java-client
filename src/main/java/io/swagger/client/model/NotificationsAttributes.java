@@ -8,53 +8,43 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.client.model.RequestData;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * DocumentLink
+ * NotificationsAttributes
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:25:36.501Z")
-public class DocumentLink {
-  @SerializedName("self")
-  private String self = null;
+public class NotificationsAttributes {
+  @SerializedName("requestAccesses")
+  private List<RequestData> requestAccesses = null;
 
-  @SerializedName("filelink")
-  private String filelink = null;
+  public NotificationsAttributes requestAccesses(List<RequestData> requestAccesses) {
+    this.requestAccesses = requestAccesses;
+    return this;
+  }
 
-  public DocumentLink self(String self) {
-    this.self = self;
+  public NotificationsAttributes addRequestAccessesItem(RequestData requestAccessesItem) {
+    if (this.requestAccesses == null) {
+      this.requestAccesses = new ArrayList<RequestData>();
+    }
+    this.requestAccesses.add(requestAccessesItem);
     return this;
   }
 
    /**
-   * Get self
-   * @return self
+   * Get requestAccesses
+   * @return requestAccesses
   **/
   @ApiModelProperty(value = "")
-  public String getSelf() {
-    return self;
+  public List<RequestData> getRequestAccesses() {
+    return requestAccesses;
   }
 
-  public void setSelf(String self) {
-    this.self = self;
-  }
-
-  public DocumentLink filelink(String filelink) {
-    this.filelink = filelink;
-    return this;
-  }
-
-   /**
-   * Get filelink
-   * @return filelink
-  **/
-  @ApiModelProperty(value = "")
-  public String getFilelink() {
-    return filelink;
-  }
-
-  public void setFilelink(String filelink) {
-    this.filelink = filelink;
+  public void setRequestAccesses(List<RequestData> requestAccesses) {
+    this.requestAccesses = requestAccesses;
   }
 
 
@@ -66,24 +56,22 @@ public class DocumentLink {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DocumentLink documentLink = (DocumentLink) o;
-    return Objects.equals(this.self, documentLink.self) &&
-        Objects.equals(this.filelink, documentLink.filelink);
+    NotificationsAttributes notificationsAttributes = (NotificationsAttributes) o;
+    return Objects.equals(this.requestAccesses, notificationsAttributes.requestAccesses);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(self, filelink);
+    return Objects.hash(requestAccesses);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DocumentLink {\n");
+    sb.append("class NotificationsAttributes {\n");
     
-    sb.append("    self: ").append(toIndentedString(self)).append("\n");
-    sb.append("    filelink: ").append(toIndentedString(filelink)).append("\n");
+    sb.append("    requestAccesses: ").append(toIndentedString(requestAccesses)).append("\n");
     sb.append("}");
     return sb.toString();
   }

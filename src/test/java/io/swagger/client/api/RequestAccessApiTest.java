@@ -1,7 +1,6 @@
 package io.swagger.client.api;
 
 import io.swagger.client.ApiException;
-import io.swagger.client.model.GenericDataRepresentationListRequestData;
 import io.swagger.client.model.RequestRepresentation;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -19,23 +18,6 @@ public class RequestAccessApiTest {
 
     private final RequestAccessApi api = new RequestAccessApi();
 
-    
-    /**
-     * Get Request accesses
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getRequestAccessTest() throws ApiException {
-        List<String> space = null;
-        String status = null;
-        GenericDataRepresentationListRequestData response = api.getRequestAccess(space, status);
-
-        // TODO: test validations
-    }
     
     /**
      * Request access

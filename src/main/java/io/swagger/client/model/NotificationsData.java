@@ -8,42 +8,21 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.client.model.PartyAttributes;
+import io.swagger.client.model.NotificationsAttributes;
 import java.io.IOException;
 
 /**
- * PartyData
+ * NotificationsData
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:25:36.501Z")
-public class PartyData {
-  @SerializedName("id")
-  private String id = null;
-
+public class NotificationsData {
   @SerializedName("type")
   private String type = null;
 
   @SerializedName("attributes")
-  private PartyAttributes attributes = null;
+  private NotificationsAttributes attributes = null;
 
-  public PartyData id(String id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Get id
-   * @return id
-  **/
-  @ApiModelProperty(value = "")
-  public String getId() {
-    return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public PartyData type(String type) {
+  public NotificationsData type(String type) {
     this.type = type;
     return this;
   }
@@ -61,7 +40,7 @@ public class PartyData {
     this.type = type;
   }
 
-  public PartyData attributes(PartyAttributes attributes) {
+  public NotificationsData attributes(NotificationsAttributes attributes) {
     this.attributes = attributes;
     return this;
   }
@@ -71,11 +50,11 @@ public class PartyData {
    * @return attributes
   **/
   @ApiModelProperty(value = "")
-  public PartyAttributes getAttributes() {
+  public NotificationsAttributes getAttributes() {
     return attributes;
   }
 
-  public void setAttributes(PartyAttributes attributes) {
+  public void setAttributes(NotificationsAttributes attributes) {
     this.attributes = attributes;
   }
 
@@ -88,24 +67,22 @@ public class PartyData {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PartyData partyData = (PartyData) o;
-    return Objects.equals(this.id, partyData.id) &&
-        Objects.equals(this.type, partyData.type) &&
-        Objects.equals(this.attributes, partyData.attributes);
+    NotificationsData notificationsData = (NotificationsData) o;
+    return Objects.equals(this.type, notificationsData.type) &&
+        Objects.equals(this.attributes, notificationsData.attributes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, attributes);
+    return Objects.hash(type, attributes);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PartyData {\n");
+    sb.append("class NotificationsData {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("}");

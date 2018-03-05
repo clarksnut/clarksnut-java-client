@@ -18,45 +18,19 @@ import java.util.Map;
 /**
  * MultipartFormDataInput
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:20:58.350Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-05T15:25:36.501Z")
 public class MultipartFormDataInput {
-  @SerializedName("formDataMap")
-  private Map<String, List<InputPart>> formDataMap = null;
-
   @SerializedName("formData")
   private Map<String, InputPart> formData = null;
+
+  @SerializedName("formDataMap")
+  private Map<String, List<InputPart>> formDataMap = null;
 
   @SerializedName("parts")
   private List<InputPart> parts = null;
 
   @SerializedName("preamble")
   private String preamble = null;
-
-  public MultipartFormDataInput formDataMap(Map<String, List<InputPart>> formDataMap) {
-    this.formDataMap = formDataMap;
-    return this;
-  }
-
-  public MultipartFormDataInput putFormDataMapItem(String key, List<InputPart> formDataMapItem) {
-    if (this.formDataMap == null) {
-      this.formDataMap = new HashMap<String, List<InputPart>>();
-    }
-    this.formDataMap.put(key, formDataMapItem);
-    return this;
-  }
-
-   /**
-   * Get formDataMap
-   * @return formDataMap
-  **/
-  @ApiModelProperty(value = "")
-  public Map<String, List<InputPart>> getFormDataMap() {
-    return formDataMap;
-  }
-
-  public void setFormDataMap(Map<String, List<InputPart>> formDataMap) {
-    this.formDataMap = formDataMap;
-  }
 
   public MultipartFormDataInput formData(Map<String, InputPart> formData) {
     this.formData = formData;
@@ -82,6 +56,32 @@ public class MultipartFormDataInput {
 
   public void setFormData(Map<String, InputPart> formData) {
     this.formData = formData;
+  }
+
+  public MultipartFormDataInput formDataMap(Map<String, List<InputPart>> formDataMap) {
+    this.formDataMap = formDataMap;
+    return this;
+  }
+
+  public MultipartFormDataInput putFormDataMapItem(String key, List<InputPart> formDataMapItem) {
+    if (this.formDataMap == null) {
+      this.formDataMap = new HashMap<String, List<InputPart>>();
+    }
+    this.formDataMap.put(key, formDataMapItem);
+    return this;
+  }
+
+   /**
+   * Get formDataMap
+   * @return formDataMap
+  **/
+  @ApiModelProperty(value = "")
+  public Map<String, List<InputPart>> getFormDataMap() {
+    return formDataMap;
+  }
+
+  public void setFormDataMap(Map<String, List<InputPart>> formDataMap) {
+    this.formDataMap = formDataMap;
   }
 
   public MultipartFormDataInput parts(List<InputPart> parts) {
@@ -138,15 +138,15 @@ public class MultipartFormDataInput {
       return false;
     }
     MultipartFormDataInput multipartFormDataInput = (MultipartFormDataInput) o;
-    return Objects.equals(this.formDataMap, multipartFormDataInput.formDataMap) &&
-        Objects.equals(this.formData, multipartFormDataInput.formData) &&
+    return Objects.equals(this.formData, multipartFormDataInput.formData) &&
+        Objects.equals(this.formDataMap, multipartFormDataInput.formDataMap) &&
         Objects.equals(this.parts, multipartFormDataInput.parts) &&
         Objects.equals(this.preamble, multipartFormDataInput.preamble);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(formDataMap, formData, parts, preamble);
+    return Objects.hash(formData, formDataMap, parts, preamble);
   }
 
 
@@ -155,8 +155,8 @@ public class MultipartFormDataInput {
     StringBuilder sb = new StringBuilder();
     sb.append("class MultipartFormDataInput {\n");
     
-    sb.append("    formDataMap: ").append(toIndentedString(formDataMap)).append("\n");
     sb.append("    formData: ").append(toIndentedString(formData)).append("\n");
+    sb.append("    formDataMap: ").append(toIndentedString(formDataMap)).append("\n");
     sb.append("    parts: ").append(toIndentedString(parts)).append("\n");
     sb.append("    preamble: ").append(toIndentedString(preamble)).append("\n");
     sb.append("}");
